@@ -5,18 +5,66 @@ entertainment = ["Live Music", "Movie", "Rodeo", "Arcade"]
 
 import random
 
+
+
 def pick_random_item(list_of_items):
     selected_item = random.choice(list_of_items)  # Random Generator for lists above
     return selected_item
 
-your_destination = pick_random_item(destinations) # Random Destination Generator
-print("Destination: ", your_destination)
+def day_trip_generator():
+    your_destination = pick_random_item(destinations) # Random Destination Generator
+    print("Destination: ", your_destination)
 
-you_restaurant = pick_random_item(restaurants)  # Random restaurant generator
-print("Restaurant: ", you_restaurant)
+    your_restaurant = pick_random_item(restaurants)  # Random restaurant generator
+    print("Restaurant: ", your_restaurant)
 
-your_transportation = pick_random_item(transportation)
-print("Transportation: ", your_transportation)
+    your_transportation = pick_random_item(transportation) # Random restaurant generator
+    print("Transportation: ", your_transportation)
 
-your_entertainment = pick_random_item(entertainment)
-print("Entertainment: ", your_entertainment)
+    your_entertainment = pick_random_item(entertainment) # Random entertainment generator
+    print("Entertainment: ", your_entertainment)
+
+ 
+    valid_response = False
+    while valid_response == False:
+        choice = input("Are you satisfied with your day trip? Yes or No ")
+   
+        if choice == "No":
+            altered_choice =  input("What would you like to change? Destination, Restaurant, Transportation, or Entertainment ")
+            
+            if altered_choice == "Destination":
+                your_destination = pick_random_item(destinations) # Random Destination Generator
+                print(f"Destination: {your_destination}")
+                print(f"Restaurant: {your_restaurant}")
+                print(f"Transportation: {your_transportation}")
+                print(f"Entertainment: {your_entertainment}")
+                valid_response = False
+            elif altered_choice == "Restaurant":
+                your_restaurant = pick_random_item(restaurants)  # Random restaurant generator
+                print(f"Destination: {your_destination}")
+                print(f"Restaurant: {your_restaurant}")
+                print(f"Transportation: {your_transportation}")
+                print(f"Entertainment: {your_entertainment}")
+                valid_response = False
+            elif altered_choice == "Transportation":
+                your_transportation = pick_random_item(transportation)
+                print(f"Destination: {your_destination}")
+                print(f"Restaurant: {your_restaurant}")
+                print(f"Transportation: {your_transportation}")
+                print(f"Entertainment: {your_entertainment}")
+                valid_response = False
+            elif altered_choice == "Entertainment":
+                your_entertainment = pick_random_item(entertainment)
+                print(f"Destination: {your_destination}")
+                print(f"Restaurant: {your_restaurant}")
+                print(f"Transportation: {your_transportation}")
+                print(f"Entertainment: {your_entertainment}")
+                valid_response = False
+            else:
+                print("Please select an item to change")
+        elif choice == "Yes":
+            print("Enjoy your trip!")
+            valid_response = True
+ 
+day_trip_generator()
+

@@ -1,4 +1,4 @@
-destinations = ["Denver", "Golden", "Gunnison", "Colorado Springs"]
+destinations = ["Denver", "Golden", "Gunnison", "Colorado Springs"] # Lists of items for the day trip
 restaurants = ["Pizza Shop", "BBQ Pit", "Buffet", "Bar and Grill"]
 transportation = ["Car", "Bus", "Walk", "Bike"]
 entertainment = ["Live Music", "Movie", "Rodeo", "Arcade"]
@@ -11,10 +11,17 @@ def pick_random_item(list_of_items):
     selected_item = random.choice(list_of_items)  # Random Generator for lists above
     return selected_item
 
+def print_day_trip(your_destination, your_restaurant, your_transportation, your_entertainment):                               # Function to print full day trip
+        print(f"Destination: {your_destination}")
+        print(f"Restaurant: {your_restaurant}")
+        print(f"Transportation: {your_transportation}")
+        print(f"Entertainment: {your_entertainment}")
+
+
 def day_trip_generator():
     your_destination = pick_random_item(destinations) # Random Destination Generator
     print("Destination: ", your_destination)
-
+    
     your_restaurant = pick_random_item(restaurants)  # Random restaurant generator
     print("Restaurant: ", your_restaurant)
 
@@ -24,14 +31,9 @@ def day_trip_generator():
     your_entertainment = pick_random_item(entertainment) # Random entertainment generator
     print("Entertainment: ", your_entertainment)
 
-    def print_day_trip():
-        print(f"Destination: {your_destination}")
-        print(f"Restaurant: {your_restaurant}")
-        print(f"Transportation: {your_transportation}")
-        print(f"Entertainment: {your_entertainment}")
- 
+
     valid_response = False
-    while valid_response == False:
+    while valid_response == False:                      # While loop to determine if user is satisfied with trip
         choice = input("Are you satisfied with your day trip? Yes or No ")
    
         if choice == "No":
@@ -39,19 +41,19 @@ def day_trip_generator():
             
             if altered_choice == "Destination":
                 your_destination = pick_random_item(destinations)
-                print_day_trip()
+                print_day_trip(your_destination, your_restaurant, your_transportation, your_entertainment)
                 valid_response = False
             elif altered_choice == "Restaurant":
                 your_restaurant = pick_random_item(restaurants)
-                print_day_trip()
+                print_day_trip(your_destination, your_restaurant, your_transportation, your_entertainment)
                 valid_response = False
             elif altered_choice == "Transportation":
                 your_transportation = pick_random_item(transportation)
-                print_day_trip()
+                print_day_trip(your_destination, your_restaurant, your_transportation, your_entertainment)
                 valid_response = False
             elif altered_choice == "Entertainment":
                 your_entertainment = pick_random_item(entertainment)
-                print_day_trip()
+                print_day_trip(your_destination, your_restaurant, your_transportation, your_entertainment)
                 valid_response = False
             else:
                 print("Please select an item to change")
@@ -59,6 +61,6 @@ def day_trip_generator():
             print("Enjoy your trip!")
             valid_response = True
     print(f"Here is your complete day trip!")
-    print_day_trip()
+    print_day_trip(your_destination, your_restaurant, your_transportation, your_entertainment)
 day_trip_generator()
 

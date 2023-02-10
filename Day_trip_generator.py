@@ -24,6 +24,11 @@ def day_trip_generator():
     your_entertainment = pick_random_item(entertainment) # Random entertainment generator
     print("Entertainment: ", your_entertainment)
 
+    def print_day_trip():
+        print(f"Destination: {your_destination}")
+        print(f"Restaurant: {your_restaurant}")
+        print(f"Transportation: {your_transportation}")
+        print(f"Entertainment: {your_entertainment}")
  
     valid_response = False
     while valid_response == False:
@@ -34,31 +39,19 @@ def day_trip_generator():
             
             if altered_choice == "Destination":
                 your_destination = pick_random_item(destinations) # Random Destination Generator
-                print(f"Destination: {your_destination}")
-                print(f"Restaurant: {your_restaurant}")
-                print(f"Transportation: {your_transportation}")
-                print(f"Entertainment: {your_entertainment}")
+                print_day_trip()
                 valid_response = False
             elif altered_choice == "Restaurant":
                 your_restaurant = pick_random_item(restaurants)  # Random restaurant generator
-                print(f"Destination: {your_destination}")
-                print(f"Restaurant: {your_restaurant}")
-                print(f"Transportation: {your_transportation}")
-                print(f"Entertainment: {your_entertainment}")
+                print_day_trip()
                 valid_response = False
             elif altered_choice == "Transportation":
                 your_transportation = pick_random_item(transportation)
-                print(f"Destination: {your_destination}")
-                print(f"Restaurant: {your_restaurant}")
-                print(f"Transportation: {your_transportation}")
-                print(f"Entertainment: {your_entertainment}")
+                print_day_trip()
                 valid_response = False
             elif altered_choice == "Entertainment":
                 your_entertainment = pick_random_item(entertainment)
-                print(f"Destination: {your_destination}")
-                print(f"Restaurant: {your_restaurant}")
-                print(f"Transportation: {your_transportation}")
-                print(f"Entertainment: {your_entertainment}")
+                print_day_trip()
                 valid_response = False
             else:
                 print("Please select an item to change")

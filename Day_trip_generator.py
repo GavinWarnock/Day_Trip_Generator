@@ -38,11 +38,11 @@ def day_trip_generator():
             altered_choice =  input("What would you like to change? Destination, Restaurant, Transportation, or Entertainment ")
             
             if altered_choice == "Destination":
-                your_destination = pick_random_item(destinations) # Random Destination Generator
+                your_destination = pick_random_item(destinations)
                 print_day_trip()
                 valid_response = False
             elif altered_choice == "Restaurant":
-                your_restaurant = pick_random_item(restaurants)  # Random restaurant generator
+                your_restaurant = pick_random_item(restaurants)
                 print_day_trip()
                 valid_response = False
             elif altered_choice == "Transportation":
@@ -58,6 +58,7 @@ def day_trip_generator():
         elif choice == "Yes":
             print("Enjoy your trip!")
             valid_response = True
- 
+    print(f"Here is your complete day trip!")
+    print_day_trip()
 day_trip_generator()
 

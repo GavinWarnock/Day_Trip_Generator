@@ -11,11 +11,11 @@ def pick_random_item(list_of_items):
     selected_item = random.choice(list_of_items)  # Random Generator for lists above
     return selected_item
 
-def print_day_trip(your_destination, your_restaurant, your_transportation, your_entertainment):    # Function to print full day trip
-        print(f"Destination: {your_destination}")
-        print(f"Restaurant: {your_restaurant}")
-        print(f"Transportation: {your_transportation}")
-        print(f"Entertainment: {your_entertainment}")
+def print_day_trip(day_trip_components):    # Function to print full day trip
+        print(f"Destination: {day_trip_components[0]}")
+        print(f"Restaurant: {day_trip_components[1]}")
+        print(f"Transportation: {day_trip_components[2]}")
+        print(f"Entertainment: {day_trip_components[3]}")
 
 
 def day_trip_generator():
@@ -31,6 +31,7 @@ def day_trip_generator():
     your_entertainment = pick_random_item(entertainment) # Random entertainment generator
     print("Entertainment: ", your_entertainment)
 
+    day_trip_components = [your_destination, your_restaurant, your_transportation, your_entertainment]
 
     valid_response = False
     while valid_response == False:                      # While loop to determine if user is satisfied with trip
@@ -56,7 +57,7 @@ def day_trip_generator():
                 print_day_trip(your_destination, your_restaurant, your_transportation, your_entertainment)
                 valid_response = False
             else:
-                print("Please select an item to change")
+                print("Please select an item to change")     # Finishes condition and resets to line 37
         elif choice == "Yes":
             print("Enjoy your trip!")
             valid_response = True

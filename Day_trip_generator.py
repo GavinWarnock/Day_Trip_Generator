@@ -19,7 +19,7 @@ def print_day_trip(day_trip_components):    # Function to print full day trip dr
 
 
 def day_trip_generator():
-    day_trip_components = ["", "", "", ""]
+    day_trip_components = ["", "", "", ""]     # Initializing 4 element list as empty strings (WHY DOES THIS WORK?)
 
     day_trip_components[0] = pick_random_item(destinations) # Random Destination Generator
     print("Destination: ", day_trip_components[0])

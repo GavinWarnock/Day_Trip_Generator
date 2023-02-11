@@ -11,7 +11,7 @@ def pick_random_item(list_of_items):
     selected_item = random.choice(list_of_items)  # Random Generator for lists above
     return selected_item
 
-def print_day_trip(your_destination, your_restaurant, your_transportation, your_entertainment):                               # Function to print full day trip
+def print_day_trip(your_destination, your_restaurant, your_transportation, your_entertainment):    # Function to print full day trip
         print(f"Destination: {your_destination}")
         print(f"Restaurant: {your_restaurant}")
         print(f"Transportation: {your_transportation}")
@@ -25,7 +25,7 @@ def day_trip_generator():
     your_restaurant = pick_random_item(restaurants)  # Random restaurant generator
     print("Restaurant: ", your_restaurant)
 
-    your_transportation = pick_random_item(transportation) # Random restaurant generator
+    your_transportation = pick_random_item(transportation) # Random transportation generator
     print("Transportation: ", your_transportation)
 
     your_entertainment = pick_random_item(entertainment) # Random entertainment generator

@@ -31,41 +31,50 @@ def get_initial_day_trip(day_trip_components):     # Function for acquiring an i
     return day_trip_components
 
 def day_trip_generator():
-
+   regenerate = True
+   while regenerate == True:
     day_trip_components = ["", "", "", ""]     # Initializing 4 element list as empty strings (WHY DOES THIS WORK?)
     get_initial_day_trip(day_trip_components)
-   
+    
+    
+
     valid_response = False
     while valid_response == False:                      # While loop to determine if user is satisfied with trip
-        choice = input("Are you satisfied with your day trip? Yes or No ")
-   
-        if choice == "No":
-            altered_choice =  input("What would you like to change? Destination, Restaurant, Transportation, or Entertainment ")
-            
-            if altered_choice == "Destination":
-                day_trip_components[0] = pick_random_item(destinations)
-                print_day_trip(day_trip_components)
-                valid_response = False
-            elif altered_choice == "Restaurant":
-                day_trip_components[1] = pick_random_item(restaurants)
-                print_day_trip(day_trip_components)
-                valid_response = False
-            elif altered_choice == "Transportation":
-                day_trip_components[2] = pick_random_item(transportation)
-                print_day_trip(day_trip_components)
-                valid_response = False
-            elif altered_choice == "Entertainment":
-                day_trip_components[3] = pick_random_item(entertainment)
-                print_day_trip(day_trip_components)
-                valid_response = False
+            choice = input("Are you satisfied with your day trip? Yes or No ")
+    
+            if choice == "No":
+                altered_choice =  input("What would you like to change? Destination, Restaurant, Transportation, or Entertainment ")
+                
+                if altered_choice == "Destination":
+                    day_trip_components[0] = pick_random_item(destinations)
+                    print_day_trip(day_trip_components)
+                    valid_response = False
+                elif altered_choice == "Restaurant":
+                    day_trip_components[1] = pick_random_item(restaurants)
+                    print_day_trip(day_trip_components)
+                    valid_response = False
+                elif altered_choice == "Transportation":
+                    day_trip_components[2] = pick_random_item(transportation)
+                    print_day_trip(day_trip_components)
+                    valid_response = False
+                elif altered_choice == "Entertainment":
+                    day_trip_components[3] = pick_random_item(entertainment)
+                    print_day_trip(day_trip_components)
+                    valid_response = False
+                else:
+                    print("Please select an item to change")     # Finishes condition and resets to line 37
+            elif choice == "Yes":
+                print("Enjoy your trip!")
+                valid_response = True
             else:
-                print("Please select an item to change")     # Finishes condition and resets to line 37
-        elif choice == "Yes":
-            print("Enjoy your trip!")
-            valid_response = True
-        else:
-            print("Please select Yes or No")
+                print("Please select Yes or No")
     print(f"Here is your complete day trip!")
     print_day_trip(day_trip_components)                # Adjusted to match function above
+    want_to_regenerate = input("Would you like to generate another day trip? Yes or No ")
+    if want_to_regenerate == "Yes":
+        regenerate = True
+    else:
+        print("Enjoy your day trip!")
+        regenerate = False
 day_trip_generator()
 

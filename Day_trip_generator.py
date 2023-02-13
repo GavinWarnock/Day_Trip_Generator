@@ -32,12 +32,10 @@ def get_initial_day_trip(day_trip_components):     # Function for acquiring an i
 
 def day_trip_generator():
    regenerate = True
-   while regenerate == True:
+   while regenerate == True:                   # While loop to determine if the user would like to regenerate another trip
     day_trip_components = ["", "", "", ""]     # Initializing 4 element list as empty strings (WHY DOES THIS WORK?)
     get_initial_day_trip(day_trip_components)
     
-    
-
     valid_response = False
     while valid_response == False:                      # While loop to determine if user is satisfied with trip
             choice = input("Are you satisfied with your day trip? Yes or No ")
@@ -73,8 +71,11 @@ def day_trip_generator():
     want_to_regenerate = input("Would you like to generate another day trip? Yes or No ")
     if want_to_regenerate == "Yes":
         regenerate = True
+    elif want_to_regenerate == "No":
+        print("Enjoy your day trip")
+        regenerate = False
     else:
-        print("Enjoy your day trip!")
+        print("Invalid selection")
         regenerate = False
 day_trip_generator()
 

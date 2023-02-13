@@ -1,5 +1,5 @@
-destinations = ["Denver", "Golden", "Gunnison", "Colorado Springs"] # Lists of items for the day trip
-restaurants = ["Pizza Shop", "BBQ Pit", "Buffet", "Bar and Grill"]
+destinations = ["Denver", "Golden", "Gunnison", "Colorado Springs", "Creede", "Rifle", "Eaton", "Aurora", "Pueblo"] # Lists of items for the day trip
+restaurants = ["Pizza Shop", "BBQ Pit", "Buffet", "Bar and Grill", "Sushi", "Pub", "Deli"]
 transportation = ["Car", "Bus", "Walk", "Bike"]
 entertainment = ["Live Music", "Movie", "Rodeo", "Arcade"]
 
@@ -17,9 +17,8 @@ def print_day_trip(day_trip_components):    # Function to print full day trip dr
         print(f"Transportation: {day_trip_components[2]}")
         print(f"Entertainment: {day_trip_components[3]}")
 
-
-def day_trip_generator():
-    day_trip_components = ["", "", "", ""]     # Initializing 4 element list as empty strings (WHY DOES THIS WORK?)
+def get_initial_day_trip(day_trip_components):
+   
 
     day_trip_components[0] = pick_random_item(destinations) # Random Destination Generator
     print("Destination: ", day_trip_components[0])
@@ -29,7 +28,12 @@ def day_trip_generator():
     print("Transportation: ", day_trip_components[2])
     day_trip_components[3] = pick_random_item(entertainment) # Random entertainment generator
     print("Entertainment: ", day_trip_components[3])
+    return day_trip_components
 
+def day_trip_generator():
+
+    day_trip_components = ["", "", "", ""]     # Initializing 4 element list as empty strings (WHY DOES THIS WORK?)
+    get_initial_day_trip(day_trip_components)
    
     valid_response = False
     while valid_response == False:                      # While loop to determine if user is satisfied with trip

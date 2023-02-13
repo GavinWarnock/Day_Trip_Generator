@@ -17,7 +17,7 @@ def print_day_trip(day_trip_components):    # Function to print full day trip dr
         print(f"Transportation: {day_trip_components[2]}")
         print(f"Entertainment: {day_trip_components[3]}")
 
-def get_initial_day_trip(day_trip_components):
+def get_initial_day_trip(day_trip_components):     # Function for acquiring an initial day trip
    
 
     day_trip_components[0] = pick_random_item(destinations) # Random Destination Generator
@@ -63,6 +63,8 @@ def day_trip_generator():
         elif choice == "Yes":
             print("Enjoy your trip!")
             valid_response = True
+        else:
+            print("Please select Yes or No")
     print(f"Here is your complete day trip!")
     print_day_trip(day_trip_components)                # Adjusted to match function above
 day_trip_generator()
